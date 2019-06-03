@@ -11,16 +11,23 @@ function App() {
           Hi, we're building APIs for you.
         </p>
       </header>
+      Find us on
+      <a
+        className="App-link"
+        href="https://facebook.com/wixware?utm_source=api.wixware.com"
+        target="_blank"
+      >
+        Facebook
+      </a>
+      or go to
       <a
         className="App-link"
         href="https://www.wixware.com?utm_source=api.wixware.com"
         target="_blank"
-        rel="noopener noreferrer"
       >
-        Go to Wixware Software Center
+        Wixware Software Center
       </a>
-      
-      <p>This is a pagarg</p>
+      to download apps.
     </div>
   );
 }
