@@ -16,9 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Go to Wixware
+          Go to Wixware Software Center
         </a>
       </header>
+      <p>This is a pagarg</p>
     </div>
   );
 }
