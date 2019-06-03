@@ -1,0 +1,19 @@
+{
+  "name": "api.wixware.com",
+  "version": "0.0.1",
+  "description": "Wixware APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wixware/api.git"
+  },
+  "author": "Wixware",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wixware/api/issues"
+  },
+  "homepage": "https://github.com/wixware/api#readme"
+}
