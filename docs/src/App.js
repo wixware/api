@@ -19,13 +19,13 @@ function App() {
       >
         Facebook
       </a>
-      or go to
+      or go to our
       <a
         className="App-link"
         href="https://www.wixware.com?utm_source=api.wixware.com"
         target="_blank"
       >
-        Wixware Software Center
+        Software Center
       </a>
       to download apps.
     </div>
