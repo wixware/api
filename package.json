@@ -2,9 +2,10 @@
   "name": "api.wixware.com",
   "version": "0.0.1",
   "description": "Wixware APIs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gcloud app deploy",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
