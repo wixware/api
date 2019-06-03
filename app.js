@@ -41,7 +41,7 @@ let allApps = appsRef.get()
   });
 
 // An api endpoint that returns a list of items (apps)
-app.get('/api/v0/get/item', (req,res) => {
+app.get('/v0/get/item', (req,res) => {
   res.json(items);
 });
 
