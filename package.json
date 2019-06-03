@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/wixware/api/issues"
   },
-  "homepage": "https://github.com/wixware/api#readme"
+  "homepage": "https://github.com/wixware/api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.0.0",
+    "forcedomain": "^1.0.1"
+  }
 }
