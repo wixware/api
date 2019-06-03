@@ -10,7 +10,7 @@ app.use(forceDomain({
 }));
 
 // Serve the static files from React App
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'docs/build')));
 
 // Firebase dependencies
 const admin = require('firebase-admin');
@@ -49,7 +49,7 @@ app.get('/api/v0/get/item', (req,res) => {
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+'docs/build/index.html'));
 });
 
 const port = process.env.PORT || 8080;
