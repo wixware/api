@@ -27,7 +27,7 @@ admin.initializeApp({
 // Initializing Firestore
 const db = admin.firestore();
 
-/***** API ENDPOINT /get/items *****/
+/***** API ENDPOINTS *****/
 let AppData;
 
   let appRef = db.collection('apps').doc('VLC');
@@ -43,7 +43,7 @@ let AppData;
       console.log('Error getting document', err);
     });
 
-// An api endpoint that returns a list of items (apps)
+// Get VLC
 app.get('/app/vlc', (req,res) => {
   res.json(AppData);
 });
