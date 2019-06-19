@@ -44,7 +44,7 @@ let AppData;
     });
 
 // An api endpoint that returns a list of items (apps)
-app.get('/v1/get/app/vlc', (req,res) => {
+app.get('/app/vlc', (req,res) => {
   res.json(AppData);
 });
 
