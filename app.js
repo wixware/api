@@ -1,5 +1,6 @@
 const express = require('express');
 const forceDomain = require('forcedomain');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
@@ -8,6 +9,8 @@ app.use(forceDomain({
   hostname: 'api.wixware.com',
   protocol: 'https'
 }));
+
+app.use(cors());
 
 // Serve the static files from React App
 app.use(express.static(path.join(__dirname, 'docs/build')));
@@ -24,27 +27,25 @@ admin.initializeApp({
 const db = admin.firestore();
 
 /***** API ENDPOINT /get/items *****/
+let AppData;
 
-let items = {};
-
-let appsRef = db.collection('apps');
-let allApps = appsRef.get()
-  .then(snapshot => {
-    let i = 0;
-    snapshot.forEach(doc => {
-      items[i] = doc.id;
-      i++;
+  let appRef = db.collection('apps').doc('VLC');
+  let getDoc = appRef.get()
+    .then(doc => {
+      if (!doc.exists) {
+        console.log('No such document!');
+      } else {
+        AppData = doc.data();
+      }
+    })
+    .catch(err => {
+      console.log('Error getting document', err);
     });
-  })
-  .catch(err => {
-    console.log('Erorr getting documents', err);
-  });
 
 // An api endpoint that returns a list of items (apps)
-app.get('/v1/get/app', (req,res) => {
-  res.json(items);
+app.get('/v1/get/app/vlc', (req,res) => {
+  res.json(AppData);
 });
-
 
 
 // Handles any requests that don't match the ones above
