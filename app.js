@@ -10,6 +10,7 @@ app.use(forceDomain({
   protocol: 'https'
 }));
 
+// Using CORS to allow requests
 app.use(cors());
 
 // Serve the static files from React App
