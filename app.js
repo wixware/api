@@ -13,7 +13,11 @@ app.use(forceDomain({
   protocol: 'https'
 }));
 
-/* Allowing everyone to fetch from api.wixware.com */
+/*
+  For now, we're allowing everyone to fetch from
+  api.wixware.com. But in the future we may restrict
+  CORS to the registered users.
+*/
 app.use(cors());
 
 /* Serving the documentation from React build */
