@@ -88,26 +88,56 @@ const db = admin.firestore();
 
 
 
-
-let AppData;
-
-  let appRef = db.collection('apps').doc('VLC');
-  let getDoc = appRef.get()
+  /* ===========================================
+   * App => VLC Media Player
+   * Endpoint => https://api.wixware.com/app/vlc
+   *
+   ============================================ */
+  let AppVLC;
+  let AppCollectionVLC = db.collection('apps').doc('VLC');
+  let getAppVLC = AppCollectionVLC.get()
     .then(doc => {
       if (!doc.exists) {
         console.log('No such document!');
       } else {
-        AppData = doc.data();
+        AppVLC = doc.data();
       }
     })
     .catch(err => {
       console.log('Error getting document', err);
     });
 
-// Get VLC
-app.get('/app/vlc', (req,res) => {
-  res.json(AppData);
-});
+  app.get('/app/vlc', (req,res) => {
+    res.json(AppVLC);
+  });
+
+
+
+
+  /* ===========================================
+   * App => Mozilla Firefox
+   * Endpoint => https://api.wixware.com/app/firefox
+   *
+   ============================================ */
+   let AppFirefox;
+   let AppCollectionFirefox = db.collection('apps').doc('VLC');
+   let getAppFirefox = AppCollectionFirefox.get()
+     .then(doc => {
+       if (!doc.exists) {
+         console.log('No such document!');
+       } else {
+         AppFirefox = doc.data();
+       }
+     })
+     .catch(err => {
+       console.log('Error getting document', err);
+     });
+ 
+   app.get('/app/firefox', (req,res) => {
+     res.json(AppFirefox);
+   });
+ 
+ 
 
 
 // Handles any requests that don't match the ones above
