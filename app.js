@@ -80,14 +80,6 @@ const db = admin.firestore();
 
 
 
-
-
-
-
-
-
-
-
   /* ===========================================
    * App => VLC Media Player
    * Endpoint => https://api.wixware.com/app/vlc
@@ -113,14 +105,13 @@ const db = admin.firestore();
 
 
 
-
   /* ===========================================
    * App => Mozilla Firefox
    * Endpoint => https://api.wixware.com/app/firefox
    *
    ============================================ */
    let AppFirefox;
-   let AppCollectionFirefox = db.collection('apps').doc('VLC');
+   let AppCollectionFirefox = db.collection('apps').doc('Firefox');
    let getAppFirefox = AppCollectionFirefox.get()
      .then(doc => {
        if (!doc.exists) {
