@@ -20,7 +20,7 @@ app.use(forceDomain({
 /*
   For now, we're allowing everyone to fetch from
   api.wixware.com. But in the future we may restrict
-  CORS to the registered users.
+  CORS to the registered users only.
 */
 app.use(cors());
 
