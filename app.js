@@ -74,7 +74,6 @@ const db = admin.firestore();
     console.log('Erorr getting documents', err);
   });
 
-  // Return a list of all Apps
   app.get('/app', (req,res) => {
     res.json(Apps);
   });
