@@ -55,8 +55,9 @@ const db = admin.firestore();
   /* 
     Endpoint => https://api.wixware.com/app
 
-    This returns a list of all appps and their 
-    general information.
+    This endpoint returns a list of all appps and their 
+    general information. For now, we're only returning a
+    list of apps and no other information about the apps.
   */
 
   let Apps = {};
