@@ -5,29 +5,33 @@ const path = require('path');
 
 const app = express();
 
+/* The API Server is hosted on Google App Engine. 
+This snippet of code redirects the address 
+wixwareapi.appspot.com to api.wixware.com */
 app.use(forceDomain({
   hostname: 'api.wixware.com',
   protocol: 'https'
 }));
 
-// Using CORS to allow requests
+/* Allowing everyone to fetch from api.wixware.com */
 app.use(cors());
 
-// Serve the static files from React App
+/* Serving the documentation from React build */
 app.use(express.static(path.join(__dirname, 'docs/build')));
 
-// Firebase dependencies
+/* Importing Firebase dependencies */
 const admin = require('firebase-admin');
 
-// Initializing firebase admin with default project on Google Cloud
+/* Initializing Firebase Admin from Google Cloud
+Project's default credentials*/
 admin.initializeApp({
   credential: admin.credential.applicationDefault()
 });
 
-// Initializing Firestore
+/* Initializing Google Firestore */
 const db = admin.firestore();
 
-/***** API ENDPOINTS *****/
+/***** API ENDPOINTS [Test] *****/
 let AppData;
 
   let appRef = db.collection('apps').doc('VLC');
