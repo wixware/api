@@ -5,6 +5,7 @@ const path = require('path');
 
 const app = express();
 
+
 /* The API Server is hosted on Google App Engine. 
 This snippet of code redirects the address 
 wixwareapi.appspot.com to api.wixware.com */
@@ -12,6 +13,7 @@ app.use(forceDomain({
   hostname: 'api.wixware.com',
   protocol: 'https'
 }));
+
 
 /*
   For now, we're allowing everyone to fetch from
