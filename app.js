@@ -59,7 +59,7 @@ const db = admin.firestore();
     general information.
   */
 
-  let Apps;
+  let Apps = {};
   let AppCollection = db.collection('apps');
   let allApps = AppCollection.get()
   .then(snapshot => {
@@ -73,7 +73,7 @@ const db = admin.firestore();
     console.log('Erorr getting documents', err);
   });
 
-  // Return list of all Apps
+  // Return a list of all Apps
   app.get('/app', (req,res) => {
     res.json(Apps);
   });
