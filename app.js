@@ -22,6 +22,7 @@ app.use(forceDomain({
 */
 app.use(cors());
 
+
 /* Serving the documentation from React build */
 app.use(express.static(path.join(__dirname, 'docs/build')));
 
