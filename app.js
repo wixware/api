@@ -40,7 +40,55 @@ admin.initializeApp({
 /* Initializing Google Firestore */
 const db = admin.firestore();
 
-/***** API ENDPOINTS [Test] *****/
+
+
+
+
+
+
+
+/***** API ENDPOINTS *****/
+
+
+
+
+  /* 
+    Endpoint => https://api.wixware.com/app
+
+    This returns a list of all appps and their 
+    general information.
+  */
+
+  let Apps;
+  let AppCollection = db.collection('apps');
+  let allApps = AppCollection.get()
+  .then(snapshot => {
+    let i = 0;
+    snapshot.forEach(doc => {
+      Apps[i] = doc.id;
+      i++;
+    });
+  })
+  .catch(err => {
+    console.log('Erorr getting documents', err);
+  });
+
+  // Return list of all Apps
+  app.get('/app', (req,res) => {
+    res.json(Apps);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 let AppData;
 
   let appRef = db.collection('apps').doc('VLC');
