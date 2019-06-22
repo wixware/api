@@ -6,10 +6,7 @@ const path = require('path');
 const app = express();
 
 
-/*
-  
-  Redirects the address wixwareapi.appspot.com to api.wixware.com
-*/
+/* Redirects the address wixwareapi.appspot.com to api.wixware.com */
 app.use(forceDomain({
   hostname: 'api.wixware.com',
   protocol: 'https'
