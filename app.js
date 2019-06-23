@@ -176,6 +176,30 @@ const db = admin.firestore();
  
  
 
+  /* ===========================================
+   * App => Audacity
+   * Endpoint => https://api.wixware.com/app/audacity
+   *
+   ============================================ */
+   let appAudacity;
+   let appCollectionAudacity = db.collection('apps').doc('Audacity');
+   let getAppAudacity = appCollectionAudacity.get()
+     .then(doc => {
+       if (!doc.exists) {
+         console.log('No such document!');
+       } else {
+         appAudacity = doc.data();
+       }
+     })
+     .catch(err => {
+       console.log('Error getting document', err);
+     });
+ 
+   app.get('/app/audacity', (req,res) => {
+     res.json(appAudacity);
+   });
+ 
+ 
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
