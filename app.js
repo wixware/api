@@ -56,13 +56,13 @@ const db = admin.firestore();
     list of apps and no other information about the apps.
   */
 
-  let Apps = {};
-  let AppCollection = db.collection('apps');
-  let allApps = AppCollection.get()
+  let apps = {};
+  let appCollection = db.collection('apps');
+  let allApps = appCollection.get()
   .then(snapshot => {
     let i = 0;
     snapshot.forEach(doc => {
-      Apps[i] = doc.id;
+      apps[i] = doc.id;
       i++;
     });
   })
@@ -71,7 +71,7 @@ const db = admin.firestore();
   });
 
   app.get('/app', (req,res) => {
-    res.json(Apps);
+    res.json(apps);
   });
 
 
@@ -81,14 +81,14 @@ const db = admin.firestore();
    * Endpoint => https://api.wixware.com/app/vlc
    *
    ============================================ */
-  let AppVLC;
-  let AppCollectionVLC = db.collection('apps').doc('VLC');
-  let getAppVLC = AppCollectionVLC.get()
+  let appVLC;
+  let appCollectionVLC = db.collection('apps').doc('VLC');
+  let getAppVLC = appCollectionVLC.get()
     .then(doc => {
       if (!doc.exists) {
         console.log('No such document!');
       } else {
-        AppVLC = doc.data();
+        appVLC = doc.data();
       }
     })
     .catch(err => {
@@ -96,7 +96,7 @@ const db = admin.firestore();
     });
 
   app.get('/app/vlc', (req,res) => {
-    res.json(AppVLC);
+    res.json(appVLC);
   });
 
 
@@ -106,14 +106,14 @@ const db = admin.firestore();
    * Endpoint => https://api.wixware.com/app/firefox
    *
    ============================================ */
-   let AppFirefox;
-   let AppCollectionFirefox = db.collection('apps').doc('Firefox');
-   let getAppFirefox = AppCollectionFirefox.get()
+   let appFirefox;
+   let appCollectionFirefox = db.collection('apps').doc('Firefox');
+   let getAppFirefox = appCollectionFirefox.get()
      .then(doc => {
        if (!doc.exists) {
          console.log('No such document!');
        } else {
-         AppFirefox = doc.data();
+         appFirefox = doc.data();
        }
      })
      .catch(err => {
@@ -121,7 +121,7 @@ const db = admin.firestore();
      });
  
    app.get('/app/firefox', (req,res) => {
-     res.json(AppFirefox);
+     res.json(appFirefox);
    });
  
  
