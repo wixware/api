@@ -126,6 +126,32 @@ const db = admin.firestore();
  
  
 
+  /* ===========================================
+   * App => OBS (Open Broadcaster Software)
+   * Endpoint => https://api.wixware.com/app/obs
+   *
+   ============================================ */
+   let appOBS;
+   let appCollectionOBS = db.collection('apps').doc('OBS');
+   let getAppOBS = appCollectionOBS.get()
+     .then(doc => {
+       if (!doc.exists) {
+         console.log('No such document!');
+       } else {
+         appOBS = doc.data();
+       }
+     })
+     .catch(err => {
+       console.log('Error getting document', err);
+     });
+ 
+   app.get('/app/obs', (req,res) => {
+     res.json(appOBS);
+   });
+ 
+ 
+
+
 
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
