@@ -151,6 +151,30 @@ const db = admin.firestore();
  
  
 
+  /* ===========================================
+   * App => Blender
+   * Endpoint => https://api.wixware.com/app/blender
+   *
+   ============================================ */
+   let appBlender;
+   let appCollectionBlender = db.collection('apps').doc('Blender');
+   let getAppBlender = appCollectionBlender.get()
+     .then(doc => {
+       if (!doc.exists) {
+         console.log('No such document!');
+       } else {
+         appBlender = doc.data();
+       }
+     })
+     .catch(err => {
+       console.log('Error getting document', err);
+     });
+ 
+   app.get('/app/blender', (req,res) => {
+     res.json(appBlender);
+   });
+ 
+ 
 
 
 // Handles any requests that don't match the ones above
