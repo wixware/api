@@ -76,11 +76,10 @@ const db = admin.firestore();
 
 
 
-  /* ===========================================
+  /* ==================================================
    * App => VLC Media Player
    * Endpoint => https://api.wixware.com/app/vlc
-   *
-   ============================================ */
+   * ================================================== */
   let appVLC;
   let appCollectionVLC = db.collection('apps').doc('VLC');
   let getAppVLC = appCollectionVLC.get()
@@ -101,11 +100,10 @@ const db = admin.firestore();
 
 
 
-  /* ===========================================
-   * App => Mozilla Firefox
+  /* ==================================================
+   * App => Firefox
    * Endpoint => https://api.wixware.com/app/firefox
-   *
-   ============================================ */
+   * ================================================== */
    let appFirefox;
    let appCollectionFirefox = db.collection('apps').doc('Firefox');
    let getAppFirefox = appCollectionFirefox.get()
@@ -126,11 +124,10 @@ const db = admin.firestore();
  
  
 
-  /* ===========================================
+  /* ==================================================
    * App => OBS (Open Broadcaster Software)
    * Endpoint => https://api.wixware.com/app/obs
-   *
-   ============================================ */
+   * ================================================== */
    let appOBS;
    let appCollectionOBS = db.collection('apps').doc('OBS');
    let getAppOBS = appCollectionOBS.get()
@@ -151,11 +148,10 @@ const db = admin.firestore();
  
  
 
-  /* ===========================================
+  /* ==================================================
    * App => Blender
    * Endpoint => https://api.wixware.com/app/blender
-   *
-   ============================================ */
+   * ================================================== */
    let appBlender;
    let appCollectionBlender = db.collection('apps').doc('Blender');
    let getAppBlender = appCollectionBlender.get()
@@ -176,11 +172,10 @@ const db = admin.firestore();
  
  
 
-  /* ===========================================
+  /* ==================================================
    * App => Audacity
    * Endpoint => https://api.wixware.com/app/audacity
-   *
-   ============================================ */
+   * ================================================== */
    let appAudacity;
    let appCollectionAudacity = db.collection('apps').doc('Audacity');
    let getAppAudacity = appCollectionAudacity.get()
